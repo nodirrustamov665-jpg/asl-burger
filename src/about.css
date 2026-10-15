@@ -1,0 +1,505 @@
+.aboutPage {
+  width: 1100px;
+  max-width: 94%;
+  margin: 80px auto;
+  position: relative;
+  animation: pageEnter 0.9s ease both;
+}
+
+.aboutBox {
+  display: flex;
+  align-items: center;
+  gap: 45px;
+  padding: 50px;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  background: linear-gradient(135deg, #202020, #111111 65%, #241309);
+  border: 1px solid #ffffff12;
+  border-radius: 30px;
+  box-shadow:
+    0 25px 70px #0008,
+    inset 0 1px 0 #ffffff12;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.aboutBox::before {
+  content: "";
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  top: -180px;
+  right: -100px;
+  background: #ff3b0025;
+  filter: blur(80px);
+  border-radius: 50%;
+  z-index: -1;
+  animation: orangeGlow 6s ease-in-out infinite alternate;
+}
+
+.aboutBox::after {
+  content: "";
+  position: absolute;
+  width: 180%;
+  height: 100%;
+  top: 0;
+  left: -190%;
+  background: linear-gradient(
+    110deg,
+    transparent 35%,
+    #ffffff08 48%,
+    #ffffff15 50%,
+    transparent 65%
+  );
+  transform: skewX(-15deg);
+  pointer-events: none;
+  animation: lightSweep 8s ease-in-out infinite;
+  z-index: -1;
+}
+
+.aboutText {
+  flex: 1;
+  min-width: 0;
+  animation: textEnter 0.9s 0.15s ease both;
+}
+
+.aboutText h1 {
+  color: #fff;
+  font-size: clamp(32px, 4vw, 48px);
+  font-weight: 800;
+  letter-spacing: -1.5px;
+  line-height: 1.2;
+  margin: 0 0 20px;
+  transition: letter-spacing 0.4s ease;
+}
+
+.aboutText h1:hover {
+  letter-spacing: -0.5px;
+}
+
+.aboutText h1 span {
+  display: inline-block;
+  color: #ff4b12;
+  background: linear-gradient(90deg, #ff3b00, #ff8a48, #ff3b00);
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textShine 4s linear infinite;
+}
+
+.aboutText h2 {
+  color: #fff;
+  font-size: 23px;
+  font-weight: 700;
+  margin: 18px 0;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.aboutText h2:hover {
+  color: #ff6030;
+  transform: translateX(5px);
+}
+
+.aboutText > p {
+  color: #bdbdbd;
+  font-size: 15px;
+  line-height: 1.9;
+  margin-bottom: 14px;
+  transition: color 0.35s ease;
+}
+
+.aboutText > p:hover {
+  color: #fff;
+}
+
+.aboutInfo {
+  display: flex;
+  gap: 14px;
+  margin: 28px 0;
+}
+
+.aboutInfo div {
+  flex: 1;
+  min-width: 0;
+  padding: 20px 15px;
+  background: linear-gradient(145deg, #303030, #202020);
+  border: 1px solid #ffffff0d;
+  border-radius: 17px;
+  position: relative;
+  overflow: hidden;
+  transition:
+    transform 0.4s ease,
+    border-color 0.4s ease,
+    box-shadow 0.4s ease,
+    background 0.4s ease;
+  animation: cardEnter 0.7s ease both;
+}
+
+.aboutInfo div:nth-child(2) {
+  animation-delay: 0.15s;
+}
+
+.aboutInfo div:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.aboutInfo div::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #ff3b00, #ff9b59);
+  transition: width 0.4s ease;
+}
+
+.aboutInfo div:hover {
+  transform: translateY(-9px) scale(1.025);
+  border-color: #ff4b0055;
+  background: linear-gradient(145deg, #38271f, #242424);
+  box-shadow: 0 15px 30px #0005, 0 0 18px #ff3b0010;
+}
+
+.aboutInfo div:hover::before {
+  width: 100%;
+}
+
+.aboutInfo h3 {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 9px;
+  transition: color 0.3s ease;
+}
+
+.aboutInfo div:hover h3 {
+  color: #ff6030;
+}
+
+.aboutInfo p {
+  color: #aaa;
+  font-size: 13px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.aboutTime {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: #fff;
+  font-size: 14px;
+  padding: 12px 18px;
+  background: #ffffff08;
+  border: 1px solid #ffffff12;
+  border-radius: 12px;
+  transition: all 0.35s ease;
+}
+
+.aboutTime:hover {
+  color: #ff7045;
+  border-color: #ff4b0055;
+  background: #ff3b0010;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px #ff3b0012;
+}
+
+.aboutImage {
+  flex: 1;
+  min-width: 0;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: imageEnter 1s 0.2s ease both;
+}
+
+.aboutImage::before {
+  content: "";
+  position: absolute;
+  width: 75%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: #ff4b001b;
+  filter: blur(55px);
+  animation: imageGlow 4s ease-in-out infinite alternate;
+}
+
+.aboutImage::after {
+  content: "";
+  position: absolute;
+  width: 78%;
+  aspect-ratio: 1;
+  border: 1px solid #ff673025;
+  border-radius: 50%;
+  animation: circleRotate 18s linear infinite;
+}
+
+.aboutImage img {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  max-width: 430px;
+  max-height: 480px;
+  object-fit: contain;
+  filter: drop-shadow(0 20px 35px #0008);
+  animation: imageFloat 4s ease-in-out infinite;
+  transition:
+    transform 0.6s cubic-bezier(.2, .8, .2, 1),
+    filter 0.5s ease;
+}
+
+.aboutImage img:hover {
+  transform: scale(1.07) translateY(-8px) rotate(1deg);
+  filter:
+    drop-shadow(0 25px 35px #0009)
+    drop-shadow(0 0 15px #ff4b0030);
+}
+
+/* Animatsiyalar */
+
+@keyframes pageEnter {
+  from {
+    opacity: 0;
+    transform: translateY(35px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes textEnter {
+  from {
+    opacity: 0;
+    transform: translateX(-35px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes imageEnter {
+  from {
+    opacity: 0;
+    transform: translateX(35px) scale(0.94);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes cardEnter {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes imageFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+@keyframes imageGlow {
+  from {
+    opacity: 0.5;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1.12);
+  }
+}
+
+@keyframes orangeGlow {
+  from {
+    opacity: 0.5;
+    transform: translate(0, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-35px, 35px);
+  }
+}
+
+@keyframes textShine {
+  to {
+    background-position: 200% center;
+  }
+}
+
+@keyframes lightSweep {
+  0%, 70% {
+    left: -190%;
+  }
+  100% {
+    left: 150%;
+  }
+}
+
+@keyframes circleRotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Planshet */
+
+@media (max-width: 950px) {
+  .aboutPage {
+    margin: 55px auto;
+  }
+
+  .aboutBox {
+    gap: 25px;
+    padding: 35px;
+  }
+
+  .aboutText h1 {
+    font-size: 35px;
+  }
+
+  .aboutText h2 {
+    font-size: 20px;
+  }
+
+  .aboutInfo {
+    gap: 9px;
+  }
+
+  .aboutInfo div {
+    padding: 15px 10px;
+  }
+
+  .aboutImage img {
+    max-width: 350px;
+  }
+}
+
+/* Telefon */
+
+@media (max-width: 750px) {
+  .aboutPage {
+    width: 100%;
+    max-width: 92%;
+    margin: 35px auto;
+  }
+
+  .aboutBox {
+    flex-direction: column-reverse;
+    gap: 25px;
+    padding: 25px 20px;
+    border-radius: 23px;
+  }
+
+  .aboutText {
+    width: 100%;
+    text-align: center;
+  }
+
+  .aboutText h1 {
+    font-size: clamp(29px, 7vw, 38px);
+    letter-spacing: -0.8px;
+  }
+
+  .aboutText h2 {
+    font-size: 20px;
+  }
+
+  .aboutText > p {
+    font-size: 14px;
+    line-height: 1.8;
+  }
+
+  .aboutInfo {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .aboutInfo div {
+    padding: 18px;
+  }
+
+  .aboutInfo h3 {
+    font-size: 16px;
+  }
+
+  .aboutInfo p {
+    font-size: 14px;
+  }
+
+  .aboutImage {
+    width: 100%;
+    max-width: 350px;
+  }
+
+  .aboutImage img {
+    max-width: 280px;
+    max-height: 330px;
+  }
+
+  .aboutTime {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
+
+/* Kichik telefonlar */
+
+@media (max-width: 380px) {
+  .aboutBox {
+    padding: 20px 15px;
+  }
+
+  .aboutText h1 {
+    font-size: 28px;
+  }
+
+  .aboutImage img {
+    max-width: 230px;
+  }
+}
+
+/* Animatsiyani kamaytirish sozlamasi yoqilgan bo'lsa */
+
+@media (prefers-reduced-motion: reduce) {
+  .aboutPage,
+  .aboutText,
+  .aboutImage,
+  .aboutInfo div,
+  .aboutImage img,
+  .aboutImage::before,
+  .aboutImage::after,
+  .aboutBox::before,
+  .aboutBox::after,
+  .aboutText h1 span {
+    animation: none !important;
+  }
+
+  .aboutBox,
+  .aboutInfo div,
+  .aboutImage img,
+  .aboutText h1,
+  .aboutText h2,
+  .aboutText > p,
+  .aboutTime {
+    transition: none !important;
+  }
+}
